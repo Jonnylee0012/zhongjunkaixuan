@@ -1,0 +1,7 @@
+<view class="login">
+<image class="login-image-bg" mode= "widthFix" src="/images/bglogin.jpg"></image>
+<view class="login-bottom">
+  <button open-type="getPhoneNumber" class="login-button">手机号一键登录</button>
+</view>
+
+</view>

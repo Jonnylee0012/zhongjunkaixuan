@@ -1,0 +1,24 @@
+
+.login {
+  width: 100%;
+  height: 100%;
+  
+}
+.login-image-bg{
+  /* width: 100%;
+  height: 100%; */
+  z-index: 1;
+}
+.login-bottom{
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  z-index: 2;
+ 
+}
+
+.login-button{
+  display: block;
+  margin: auto;
+  bottom: 80px;
+}
