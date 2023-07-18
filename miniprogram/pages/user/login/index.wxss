@@ -25,7 +25,7 @@ page {
 .login-button{
   display: block;
   margin: auto;
-  bottom: 100px;
+  bottom: 140px;
   color: #ab3d3f;
   font-size: 14px;
   background-color: #ecd4d4;
