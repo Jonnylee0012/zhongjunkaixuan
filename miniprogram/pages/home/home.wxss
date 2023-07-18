@@ -62,12 +62,30 @@
 
 .home-second-imgs-first {
   width: 100%;
+  position: relative;
 }
 
 .home-second-imgs-first-img {
   width: 100%;
   height: auto;
   display: block;
+}
+.home-second-imgs-first-btn{
+  display: inline-block;
+  position: absolute;
+  bottom:90rpx;
+  right: 60rpx;
+  background: rgb(169, 41, 41);
+  color:  #fff;
+  padding: 20rpx 30rpx;
+  font-size: 25rpx;
+  line-height: 25rpx;
+  border-radius: 30rpx;
+  display: flex;
+}
+.home-second-imgs-first-btn-icon{
+  font-size: 18rpx;
+  margin-left: 10rpx;
 }
 
 .home-second-imgs-second-box {

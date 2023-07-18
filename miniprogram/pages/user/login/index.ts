@@ -1,18 +1,18 @@
 
 
 Page({
-  data:{
+  data: {
 
   },
-  pageTo(){
+  pageTo() {
     console.log(22)
     wx.navigateTo({
-            url:'../../home/home'
-          }) 
+      url: '../../home/home'
+    })
   },
-  getPhoneNumber (e:any) {
+  getPhoneNumber(e: any) {
     console.log(11)
-    let detail  = e.detail;
+    let detail = e.detail;
     console.log(detail)
     // if(detail.errMsg === "getPhoneNumber:ok") {
     //   console.log('用户同意授权')

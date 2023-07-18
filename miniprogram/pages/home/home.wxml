@@ -12,6 +12,7 @@
     <view class="home-second-imgs">
       <view class="home-second-imgs-first">
         <image class="home-second-imgs-first-img" mode="widthFix" src="/images/bg-home-middle-1.png"></image>
+        <view class="home-second-imgs-first-btn">前往认证 <text class="home-second-imgs-first-btn-icon">>></text></view>
       </view>
       <view class="home-second-imgs-second-box">
         <view class="home-second-imgs-second-left">
