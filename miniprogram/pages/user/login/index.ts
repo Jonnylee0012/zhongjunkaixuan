@@ -10,6 +10,12 @@ Page({
       url: '../../home/home'
     })
   },
+  pageToSplash(){
+    console.log(22)
+    wx.navigateTo({
+      url: '../../splash/splash'
+    })
+  },
   getPhoneNumber(e: any) {
     console.log(11)
     let detail = e.detail;

@@ -1,4 +1,4 @@
-// pages/splash /splash .ts
+// pages/splash/splash.ts
 Page({
 
   /**

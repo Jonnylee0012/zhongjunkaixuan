@@ -1,0 +1,21 @@
+<!--pages/splash/splash.wxml-->
+  <swiper  vertical="false"  class="splash-box">
+    <swiper-item class="swiper-item">
+      <view class="splash-swiper">
+        <image  mode="scaleToFill" src="/images/bg-home-header.png" class="swiper-item-img"></image>
+        <view class="swiper-item-img-point">   
+           <!-- <image class="swiper-item-img-point-icon" mode="widthFix" src="/images/icon-reviewing.png"></image> -->
+           箭头1??
+          </view>
+      </view>
+    </swiper-item>
+    <swiper-item class="swiper-item">
+      <view class="splash-swiper">
+        <image  mode="scaleToFill" src="/images/bg-login.png" class="swiper-item-img"></image>
+        <view class="swiper-item-img-point">   
+           <!-- <image class="swiper-item-img-point-icon" mode="widthFix" src="/images/icon-reviewing.png"></image> -->
+           箭头2??
+          </view>
+      </view>
+    </swiper-item>
+  </swiper>
