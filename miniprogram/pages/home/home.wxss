@@ -1,0 +1,203 @@
+/* pages/home/home.wxss */
+.home {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+/* 第一部分 -- 第一屏幕 */
+.home-first {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.home-first-image-bg {
+  width: 100vw;
+  height: 100vh;
+}
+
+.home-first-text {
+  display: inline-block;
+  background: rgba(255, 211, 162);
+  color: rgb(169, 41, 41);
+  position: absolute;
+  bottom: 15vh;
+  z-index: 10;
+  padding: 10rpx 50rpx;
+  border-radius: 50rpx;
+  font-size: 35rpx;
+
+
+}
+
+.home-first-btn {
+  display: inline-block;
+  color: #fff;
+  position: absolute;
+  bottom: 10vh;
+  z-index: 10;
+  font-size: 25rpx;
+}
+
+/* 第二部分 */
+.home-second {
+  width: 100vw;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 0 20rpx;
+  background: rgba(249, 249, 249);
+  /* background: green; */
+}
+
+/* 第二部分-- 图片 */
+.home-second-imgs {
+  width: 100%;
+  margin-top: 30rpx;
+
+}
+
+.home-second-imgs-first {
+  width: 100%;
+}
+
+.home-second-imgs-first-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.home-second-imgs-second-box {
+  display: flex;
+  width: 100%;
+  margin-top: 50rpx;
+}
+
+.home-second-imgs-second-left {
+  width: 50%;
+  height: auto;
+  flex: 1;
+}
+
+.home-second-imgs-second-right {
+  width: 50%;
+  height: auto;
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+/* 第二部分-- 优选推荐 */
+.home-second-recommend {
+  margin-top: 70rpx;
+}
+
+.home-second-title {
+  display: flex;
+  align-items: center;
+}
+
+.home-second-title-line {
+  width: 8rpx;
+  height: 35rpx;
+  background: rgb(147, 34, 35);
+  margin-right: 30rpx;
+}
+
+.home-second-title-con {
+  font-size: 35rpx;
+  font-weight: 400;
+}
+
+.home-second-recommend-con {
+  margin-top: 30rpx;
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-second-recommend-con-item {
+  width: 20%;
+  text-align: center;
+}
+
+.home-second-recommend-con-item-icon {
+  width: 100%;
+  display: block;
+}
+
+.home-second-recommend-con-item-text {
+  display: inline-block;
+  padding-top: 15px;
+  font-size: 26rpx;
+  text-align: center;
+}
+
+/* 第二部分-- 优选内容 */
+.home-second-content {
+  margin-top: 70rpx;
+  padding-bottom: 100rpx;
+}
+
+.home-second-content-con {
+  margin-top: 30rpx;
+}
+
+.home-second-content-con-item {
+  margin-bottom: 20rpx;
+  width: 100;
+  border-radius: 20rpx;
+  display: flex;
+  background: #fff;
+  padding: 15px;
+}
+
+.home-second-content-con-item-left {
+  width: 65%;
+  padding-right: 50rpx;
+  box-sizing: border-box;
+
+}
+
+.home-second-content-con-item-left-title {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+}
+
+.home-second-content-con-item-left-des {
+  margin-top: 25rpx;
+  font-size: 23rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.home-second-content-con-item-right {
+  width: 35%;
+  height: 100%;
+
+}
+.home-second-content-con-item-right-img-box{
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 100%;
+  height: 0;
+  background: green;
+}
+.home-second-content-con-item-right-img{
+width: 100%;
+height: 100%;
+display: block;
+
+}

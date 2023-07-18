@@ -1,0 +1,89 @@
+<!--pages/home/home.wxml-->
+<view class="home">
+  <!-- 第一屏幕 -->
+  <view class="home-first">
+    <image class="home-first-image-bg" mode="scaleToFill" src="/images/bg-home-header.png"></image>
+    <text class="home-first-text">退伍军人优待证</text>
+    <text class="home-first-btn">前往认证 >> </text>
+  </view>
+  <!-- 第二屏幕 -->
+  <view class="home-second">
+    <!-- 第二屏幕第一部分  图片-->
+    <view class="home-second-imgs">
+      <view class="home-second-imgs-first">
+        <image class="home-second-imgs-first-img" mode="widthFix" src="/images/bg-home-middle-1.png"></image>
+      </view>
+      <view class="home-second-imgs-second-box">
+        <view class="home-second-imgs-second-left">
+          <image class="home-second-imgs-first-img" mode="widthFix" src="/images/bg-home-middle-2.png"></image>
+        </view>
+        <view class="home-second-imgs-second-right">
+          <image class="home-second-imgs-first-img" mode="widthFix" src="/images/bg-home-middle-3.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 第二部分  优选推荐-->
+    <view class="home-second-recommend">
+      <view class="home-second-title">
+        <view class="home-second-title-line"></view>
+        <view class="home-second-title-con">优选推荐</view>
+      </view>
+      <view class="home-second-recommend-con">
+        <view class="home-second-recommend-con-item">
+          <image class="home-second-recommend-con-item-icon" mode="widthFix" src="/images/icon-home-shopping.png"></image>
+          <text class="home-second-recommend-con-item-text">优待甄选</text>
+        </view>
+        <view class="home-second-recommend-con-item">
+          <image class="home-second-recommend-con-item-icon" mode="widthFix" src="/images/icon-home-help.png"></image>
+          <text class="home-second-recommend-con-item-text">公益帮扶</text>
+        </view>
+        <view class="home-second-recommend-con-item">
+          <image class="home-second-recommend-con-item-icon" mode="widthFix" src="/images/icon-home-live.png"></image>
+          <text class="home-second-recommend-con-item-text">小康生活</text>
+        </view>
+        <view class="home-second-recommend-con-item">
+          <image class="home-second-recommend-con-item-icon" mode="widthFix" src="/images/icon-home-video.png"></image>
+          <text class="home-second-recommend-con-item-text">凯旋岁月</text>
+        </view>
+
+      </view>
+
+
+    </view>
+
+    <!-- 第二部分  优选内容-->
+    <view class="home-second-content">
+      <view class="home-second-title">
+        <view class="home-second-title-line"></view>
+        <view class="home-second-title-con">优选内容</view>
+      </view>
+      <view class="home-second-content-con">
+        <view class="home-second-content-con-item">
+          <view class="home-second-content-con-item-left">
+            <view class="home-second-content-con-item-left-title"> 这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊这里是标题啊</view>
+            <view class="home-second-content-con-item-left-des">这里是描述啊这里是描述啊这里是描述啊这里是描述啊这里是描述啊这里是描述啊这里是描述啊这里是描述啊这里是描述啊这里是描述啊</view>
+          </view>
+          <view class="home-second-content-con-item-right">
+            <!-- <view class="home-second-content-con-item-right-img-box"> -->
+              <image class="home-second-content-con-item-right-img" mode="widthFix" src="/images/icon-home-video.png"></image>
+            <!-- </view> -->
+          </view>
+        </view>
+
+        <view class="home-second-content-con-item">
+          <view class="home-second-content-con-item-left">
+            <view class="home-second-content-con-item-left-title"> 这里是标题啊</view>
+            <view class="home-second-content-con-item-left-des">这里是描述啊</view>
+          </view>
+          <view class="home-second-content-con-item-right">
+            <!-- <view class="home-second-content-con-item-right-img-box"> -->
+              <image class="home-second-content-con-item-right-img" mode="widthFix" src="/images/bg-home-middle-3.png"></image>
+            <!-- </view> -->
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>
