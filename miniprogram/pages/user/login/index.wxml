@@ -5,7 +5,6 @@
   <!-- <button class="login-button" bindtap="pageTo">跳到首页</button> -->
   <button class="login-button" bindtap="pageToSplash">跳到splash</button>
 
-
 </view>
 
 </view>
