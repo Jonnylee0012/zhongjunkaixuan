@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/user/login/index",
     "pages/home/home",
-    "pages/splash/splash"
+    "pages/splash/splash",
+    "pages/authenticate/authenticate"
   ],
   "window": {
     "backgroundTextStyle": "light",

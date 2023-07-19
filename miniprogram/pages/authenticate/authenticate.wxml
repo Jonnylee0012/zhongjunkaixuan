@@ -1,0 +1,35 @@
+<view class="authenticate-box">
+  <!-- 退伍军人优待证的正反面部分 -->
+  <text class="authenticate-title">退伍军人优待证的正反面</text>
+  <view class="authenticate-image-box">
+    <view class="authenticate-image-left">
+      <text class="authenticate-image-left-title">头像面</text>
+      <text class="authenticate-image-left-tip">上传您的优待证头像面</text>
+    </view>
+    <view class="authenticate-image-right">
+      <image class="authenticate-image-right-img" mode="aspectFit" src="/images/icon-identity-front.png"></image>
+    </view>
+  </view>
+  <view class="authenticate-image-box">
+    <view class="authenticate-image-left">
+      <text class="authenticate-image-left-title">反面</text>
+      <text class="authenticate-image-left-tip">上传您的优待证反面</text>
+    </view>
+    <view class="authenticate-image-right">
+      <image class="authenticate-image-right-img" mode="aspectFit" src="/images/icon-indentity-reverse.png"></image>
+    </view>
+  </view>
+
+  <!-- 个人信息部分 -->
+  <text class="authenticate-title title2">请完善您的个人信息</text>
+  <view class="authenticate-info-box">
+  <text class="authenticate-info-label">姓名</text>
+  <input class="authenticate-info-input" type="text" placeholder="请输入姓名" name="name"/>
+  </view>
+  <view class="authenticate-info-box">
+  <text class="authenticate-info-label">退伍军人优待证号码</text>
+  <input class="authenticate-info-input" type="text" placeholder="请输入号码" name="number"/>
+  </view>
+
+  <view class="authenticate-sub-btn">提交</view>
+</view>

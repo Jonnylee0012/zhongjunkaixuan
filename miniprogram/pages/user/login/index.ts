@@ -11,9 +11,15 @@ Page({
     })
   },
   pageToSplash(){
-    console.log(22)
+    console.log(33)
     wx.navigateTo({
       url: '../../splash/splash'
+    })
+  },
+  pageToAuthenticate(){
+    console.log(44)
+    wx.navigateTo({
+      url: '../../authenticate/authenticate'
     })
   },
   getPhoneNumber(e: any) {
