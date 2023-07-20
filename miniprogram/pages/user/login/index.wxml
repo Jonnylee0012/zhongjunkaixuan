@@ -3,9 +3,11 @@
 <view class="login-container-bottom">
   <!-- <button open-type="getPhoneNumber" class="login-button">手机号码一键登录</button> -->
   <!-- <button class="login-button" bindtap="pageTo">跳到首页</button> -->
-  <!-- <button class="login-button" bindtap="pageToSplash">跳到splash</button> -->
+  <button class="login-button" bindtap="pageToSplash">跳到splash</button>
 
   <button class="login-button" bindtap="pageToAuthenticate">跳到authenticate</button>
+  <button class="login-button" bindtap="pageToResult">跳到result</button>
+  
 </view>
 
 </view>

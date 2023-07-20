@@ -1,0 +1,19 @@
+/* pages/result/result.wxss */
+.result{
+  width: 100vw;
+  height: 100vh;
+  background: rgb(249,249,249);
+}
+.result-img-box{
+  padding-top: 18vh;
+  text-align: center;
+}
+.result-img{
+  width: 200rpx;
+}
+.result-des{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-top: 50rpx;
+}

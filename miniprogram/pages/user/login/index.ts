@@ -22,6 +22,13 @@ Page({
       url: '../../authenticate/authenticate'
     })
   },
+  pageToResult(){
+    console.log(55)
+    wx.navigateTo({
+      url: '../../result/result'
+    })
+  },
+
   getPhoneNumber(e: any) {
     console.log(11)
     let detail = e.detail;
