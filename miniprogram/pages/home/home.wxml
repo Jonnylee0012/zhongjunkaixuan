@@ -12,7 +12,7 @@
     <view class="home-second-imgs">
       <view class="home-second-imgs-first">
         <image class="home-second-imgs-first-img" mode="widthFix" src="/images/bg-home-middle-1.png"></image>
-        <view class="home-second-imgs-first-btn">前往认证 <text class="home-second-imgs-first-btn-icon">>></text></view>
+        <view class="home-second-imgs-first-btn" bindtap="pageToAuthenticate">前往认证 <text class="home-second-imgs-first-btn-icon">>></text></view>
       </view>
       <view class="home-second-imgs-second-box">
         <view class="home-second-imgs-second-left">
@@ -67,7 +67,7 @@
           </view>
           <view class="home-second-content-con-item-right">
             <!-- <view class="home-second-content-con-item-right-img-box"> -->
-              <image class="home-second-content-con-item-right-img" mode="widthFix" src="/images/icon-home-video.png"></image>
+            <image class="home-second-content-con-item-right-img" mode="widthFix" src="/images/icon-home-video.png"></image>
             <!-- </view> -->
           </view>
         </view>
@@ -79,7 +79,7 @@
           </view>
           <view class="home-second-content-con-item-right">
             <!-- <view class="home-second-content-con-item-right-img-box"> -->
-              <image class="home-second-content-con-item-right-img" mode="widthFix" src="/images/bg-home-middle-3.png"></image>
+            <image class="home-second-content-con-item-right-img" mode="widthFix" src="/images/bg-home-middle-3.png"></image>
             <!-- </view> -->
           </view>
         </view>

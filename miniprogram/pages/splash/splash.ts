@@ -7,10 +7,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    splashImageUrl:[
+    splashImageUrl: [
       IMAGE_PATH + '61794af7-feea-4c40-8e67-2ccddc88a38b',
       IMAGE_PATH + '61794af7-feea-4c40-8e67-2ccddc88a38b',
-  ]
+    ]
+  },
+
+
+  pageTo(e: any) {
+    console.log(e);
+    wx.navigateTo({
+      url: '../home/home'
+    })
   },
 
   /**

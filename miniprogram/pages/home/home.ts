@@ -10,6 +10,13 @@ Page({
     homeHeaderImageUrl: IMAGE_PATH + '61794af7-feea-4c40-8e67-2ccddc88a38b',
   },
 
+
+  pageToAuthenticate() {
+    wx.navigateTo({
+      url: '../authenticate/authenticate'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
