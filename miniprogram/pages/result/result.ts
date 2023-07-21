@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    resultState:1,
-    resultDes:"优待证审核成功",
-    
+    // resultState:1,
+    // resultDes:"优待证审核成功",
+
     // resultState:2,
     // resultDes:"优待证审核失败"
 
-    // resultState:3,
-    // resultDes:"优待证审核中..."
+    resultState: 3,
+    resultDes: "优待证审核中..."
 
   },
 

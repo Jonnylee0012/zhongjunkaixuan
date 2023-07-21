@@ -1,3 +1,5 @@
+import { IMAGE_PATH } from "../../config/global-config";
+
 // pages/splash/splash.ts
 Page({
 
@@ -5,7 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    splashImageUrl:[
+      IMAGE_PATH + '61794af7-feea-4c40-8e67-2ccddc88a38b',
+      IMAGE_PATH + '61794af7-feea-4c40-8e67-2ccddc88a38b',
+  ]
   },
 
   /**

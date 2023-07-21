@@ -1,8 +1,9 @@
+import { IMAGE_PATH } from "../../../config/global-config"
 
 
 Page({
   data: {
-
+    loginBgUrl: IMAGE_PATH+'eaef30ce-f149-4506-b57e-6e1bcaa06c1e',
   },
   pageTo() {
     console.log(22)
