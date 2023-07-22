@@ -17,3 +17,10 @@ const formatNumber = (n: number) => {
   const s = n.toString()
   return s[1] ? s : '0' + s
 }
+
+
+// 判断用户是否登录
+export const isLogin = () => {
+  let accessToken = wx.getStorageSync('access_token')
+  return accessToken !== '' && accessToken !== null && accessToken !== undefined
+}

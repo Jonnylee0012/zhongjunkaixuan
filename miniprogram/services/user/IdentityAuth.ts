@@ -1,4 +1,4 @@
-import { BASE_URL, TOKEN } from "../../config/global-config"
+import { BASE_URL } from "../../config/global-config"
 
 
 export function fetchVerification(parms: any) {
@@ -7,13 +7,18 @@ export function fetchVerification(parms: any) {
     wx.request({
       url: BASE_URL + 'items/verification',
       header: {
-        authorization: TOKEN,
+        authorization: wx.getStorageSync('access_token'),
       },
       method: 'POST',
       data: parms,
       success: (res: any) => {
-        console.log(res.data)
-        resolve(true)
+        if (res.statusCode === 200) {
+          console.log(res.data)
+          resolve(true)
+        } else {
+          resolve(false)
+        }
+
       },
     })
   })

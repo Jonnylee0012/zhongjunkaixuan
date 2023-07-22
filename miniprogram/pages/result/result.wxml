@@ -1,9 +1,9 @@
 <!--pages/result/result.wxml-->
 <view class="result">
-<view class="result-img-box">
-  <image wx:if="{{resultState == 1}}" mode="widthFix" src="/images/icon-review-success.png" class="result-img"></image>
-  <image  wx:if="{{resultState == 2}}" mode="widthFix" src="/images/icon-review-fail.png" class="result-img"></image>
-  <image  wx:if="{{resultState == 3}}" mode="widthFix" src="/images/icon-reviewing.png" class="result-img"></image>
-</view>
-<test class="result-des">{{resultDes}}</test>
+  <view class="result-img-box">
+    <image wx:if="{{resultState == 1}}" mode="widthFix" src="/images/icon-review-success.png" class="result-img"></image>
+    <image wx:if="{{resultState == 2}}" mode="widthFix" src="/images/icon-review-fail.png" class="result-img"></image>
+    <image wx:if="{{resultState == 3}}" mode="widthFix" src="{{iconReviewing}}" class="result-img"></image>
+  </view>
+  <test class="result-des">{{resultDes}}</test>
 </view>

@@ -1,4 +1,5 @@
 import { IMAGE_PATH } from "../../../config/global-config"
+import { fetchLogin } from "../../../services/login/login"
 
 
 Page({
@@ -29,15 +30,39 @@ Page({
     })
   },
 
-  getPhoneNumber(e: any) {
-    console.log(11)
+  async getPhoneNumber(e: any) {
     let detail = e.detail;
     console.log(detail)
     if (detail.errMsg === "getPhoneNumber:ok") {
       console.log('用户同意授权')
       let code = detail.code;
-      console.log(code)
-      this.pageToSplash()
+      let parms: any = {
+        code: code
+      }
+      const result = await fetchLogin(parms)
+      console.log(result);
+      if (result) {
+        wx.showToast({
+          title: '登录成功!',
+          icon: 'success',
+          duration: 500,
+          mask: true,
+          success: () => {
+            setTimeout(() => {
+              wx.redirectTo({
+                url: '../../home/home'
+              });
+            }, 1000)
+          }
+        });
+      } else {
+        wx.showToast({
+          title: '登录失败!',
+          icon: 'error',
+          duration: 1000,
+          mask: true,
+        })
+      }
       // wx.request({
       //   //登录接口
       //   url:'',

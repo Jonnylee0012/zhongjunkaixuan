@@ -1,4 +1,4 @@
-import { BASE_URL, PRIVATE_FOLDER_KEY, TOKEN } from "../../config/global-config";
+import { BASE_URL, IMAGE_PATH, PRIVATE_FOLDER_KEY, TOKEN } from "../../config/global-config";
 import { fetchVerification } from "../../services/user/IdentityAuth";
 
 // pages/authenticate/authenticate.ts
@@ -13,8 +13,8 @@ Page({
     cardBack: '',
     cardName: '',
     cardNumber: '',
-    frontTempFilePath: '/images/icon-identity-front.png',
-    backTempFilePath: '/images/icon-indentity-back.png'
+    frontTempFilePath: IMAGE_PATH + '7e6b563f-e357-4f18-947c-f2803ffca98f',
+    backTempFilePath: IMAGE_PATH + 'e5fff847-ce67-4459-aff2-c5ca1000137e'
   },
 
 
@@ -110,7 +110,7 @@ Page({
     wx.uploadFile({
       url: BASE_URL + 'files',
       header: {
-        authorization: TOKEN,
+        authorization: wx.getStorageSync('token'),
       },
       filePath: mFilePath,
       name: 'file',
@@ -118,14 +118,16 @@ Page({
         'folder': PRIVATE_FOLDER_KEY,
       },
       success: function (res) {
-        var data: any = res.data;
-        console.log(data);
-        const jsonData = JSON.parse(data)
-        //console.log(jsonData.data.uploaded_by)
-        console.log([cardImageKey]);
-        _this.setData({
-          [cardImageKey]: jsonData.data.id,
-        })
+        if (res.statusCode === 200) {
+          var data: any = res.data;
+          console.log(data);
+          const jsonData = JSON.parse(data)
+          //console.log(jsonData.data.uploaded_by)
+          console.log([cardImageKey]);
+          _this.setData({
+            [cardImageKey]: jsonData.data.id,
+          })
+        }
       },
       fail: function (error) {
         console.log(error);

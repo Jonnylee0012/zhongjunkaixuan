@@ -8,14 +8,16 @@ Page({
    */
   data: {
     splashImageUrl: [
-      IMAGE_PATH + '61794af7-feea-4c40-8e67-2ccddc88a38b',
-      IMAGE_PATH + '61794af7-feea-4c40-8e67-2ccddc88a38b',
+      IMAGE_PATH + 'addaea63-a2c5-4a65-acbe-be67d6e6fd13',
+      IMAGE_PATH + 'addaea63-a2c5-4a65-acbe-be67d6e6fd13',
     ]
   },
 
 
   pageTo(e: any) {
     console.log(e);
+    const token = wx.getStorageSync('access_token')
+    console.log(token)
     wx.navigateTo({
       url: '../home/home'
     })
