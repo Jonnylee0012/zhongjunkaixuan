@@ -68,7 +68,7 @@
           </view>
           <view class="home-second-content-con-item-right">
             <!-- <view class="home-second-content-con-item-right-img-box"> -->
-            <image class="home-second-content-con-item-right-img" mode="widthFix" src="{{item.cover.id}}"></image>
+            <image class="home-second-content-con-item-right-img" mode="widthFix" src="{{item.cover}}"></image>
             <!-- </view> -->
           </view>
         </view>
