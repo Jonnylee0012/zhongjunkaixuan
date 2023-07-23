@@ -15,10 +15,10 @@
         <view class="home-second-imgs-first-btn" bindtap="pageToAuthenticate">前往认证 <text class="home-second-imgs-first-btn-icon">></text></view>
       </view>
       <view class="home-second-imgs-second-box">
-        <view class="home-second-imgs-second-left">
+        <view class="home-second-imgs-second-left" bindtap="pageToShopingMiniProgram">
           <image class="home-second-imgs-first-img" mode="widthFix" src="{{homeM2}}"></image>
         </view>
-        <view class="home-second-imgs-second-right">
+        <view class="home-second-imgs-second-right" bindtap="pageToNuKnowPage">
           <image class="home-second-imgs-first-img" mode="widthFix" src="{{homeM3}}"></image>
         </view>
       </view>
@@ -31,7 +31,7 @@
         <view class="home-second-title-con">优选推荐</view>
       </view>
       <view class="home-second-recommend-con">
-        <view class="home-second-recommend-con-item">
+        <view class="home-second-recommend-con-item" bindtap="pageToShopingMiniProgram">
           <image class="home-second-recommend-con-item-icon" mode="widthFix" src="{{homeG1}}"></image>
           <text class="home-second-recommend-con-item-text">凯旋甄选</text>
         </view>
@@ -39,7 +39,7 @@
           <image class="home-second-recommend-con-item-icon" mode="widthFix" src="{{homeG2}}"></image>
           <text class="home-second-recommend-con-item-text">创业就业营</text>
         </view>
-        <view class="home-second-recommend-con-item">
+        <view class="home-second-recommend-con-item" bindtap="pageToNuKnowPage">
           <image class="home-second-recommend-con-item-icon" mode="widthFix" src="{{homeG3}}"></image>
           <text class="home-second-recommend-con-item-text">凯旋视频号</text>
         </view>

@@ -1,5 +1,6 @@
 import { BASE_URL, IMAGE_PATH, PRIVATE_FOLDER_KEY, TOKEN } from "../../config/global-config";
 import { fetchVerification } from "../../services/user/IdentityAuth";
+import { loadUserInfo } from "../../services/user/userInfo";
 
 // pages/authenticate/authenticate.ts
 Page({
@@ -110,7 +111,7 @@ Page({
     wx.uploadFile({
       url: BASE_URL + 'files',
       header: {
-        authorization: wx.getStorageSync('token'),
+        authorization: wx.getStorageSync('access_token'),
       },
       filePath: mFilePath,
       name: 'file',
@@ -140,6 +141,7 @@ Page({
    */
   onLoad() {
 
+    loadUserInfo()
   },
 
   /**

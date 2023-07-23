@@ -17,7 +17,7 @@ export function fetchLogin(parms: any) {
         if (res.statusCode === 200) {
           var tokenInfo: any = res.data.data;
           console.log(tokenInfo.access_token)
-          wx.setStorageSync('access_token', tokenInfo.access_token)
+          wx.setStorageSync('access_token', 'Bearer ' + tokenInfo.access_token)
           wx.setStorageSync('refresh_token', tokenInfo.refresh_token)
           //return res.data
           resolve(true)

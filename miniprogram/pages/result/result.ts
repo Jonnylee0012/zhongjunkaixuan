@@ -1,4 +1,6 @@
 import { IMAGE_PATH } from "../../config/global-config";
+import { fetchVerificationList } from "../../services/user/IdentityAuth";
+import { isLogin } from "../../utils/util";
 
 // pages/result/result.ts
 Page({
@@ -13,19 +15,39 @@ Page({
     // resultState:2,
     // resultDes:"优待证审核失败"
 
-    resultState: 3,
+    resultState: 'ing',
     resultDes: "优待证审核中...",
-    iconReviewfail: IMAGE_PATH + '2a1a974a-0e89-4164-8332-f492b4433bfc',
-    iconReviewSuccess: IMAGE_PATH + 'd90742c2-3734-47ca-865c-a97cffa96dad',
-    iconReviewing: IMAGE_PATH + ' a7717f07-9372-4a13-921d-4356e5d3068b',
+    failedReason: '',
+    resultIcon: IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b',
+    // iconReviewfail: IMAGE_PATH + '2a1a974a-0e89-4164-8332-f492b4433bfc',
+    // iconReviewSuccess: IMAGE_PATH + 'd90742c2-3734-47ca-865c-a97cffa96dad',
+    // iconReviewing: IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b',
 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-
+  async onLoad() {
+    //filter[_and][0][user_created][_contains]: 596776e8-ba8e-4839-b20e-1bb326b1080a
+    if (isLogin()) {
+      let data: any = await fetchVerificationList()
+      console.log(data);
+      let status = data.data[0].status
+      let resultIcon = ''
+      if (status === 'ing') {
+        resultIcon = IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b'
+      } else if (status === 'done') {
+        resultIcon = IMAGE_PATH + 'd90742c2-3734-47ca-865c-a97cffa96dad'
+      } else {
+        resultIcon = IMAGE_PATH + '2a1a974a-0e89-4164-8332-f492b4433bfc'
+      }
+      this.setData({
+        resultState: status,
+        failedReason: data.data[0].failed_reason,
+        resultIcon: resultIcon,
+      })
+    }
   },
 
   /**

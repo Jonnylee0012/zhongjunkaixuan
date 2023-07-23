@@ -1,5 +1,6 @@
-import { IMAGE_PATH } from "../../config/global-config";
+import { IMAGE_PATH, SHOPPING_APPID } from "../../config/global-config";
 import { loadContentInfo } from "../../services/home/content";
+import { fetchVerificationList } from "../../services/user/IdentityAuth";
 import { isLogin, setThumbImageUrl } from "../../utils/util";
 
 // pages/home/home.ts
@@ -18,30 +19,8 @@ Page({
     homeG3: IMAGE_PATH + '31cc8123-f583-4823-bdc4-9735933cf5fd',
     homeG4: IMAGE_PATH + '66962d7d-431e-4aa0-a042-95e796b1609c',
     HomeGoAu: IMAGE_PATH + '167aedf5-38c2-4845-a29b-2de64c15a976',
-    contentList: [
-      // {
-      //   "brief": "这个大动作，开辟了另一个1000亿赛道：电动飞机。",
-      //   "date_created": "2023-07-21T13:30:02.000Z",
-      //   "title": "突发，9000亿巨头大动作：1000亿",
-      //   "id": "2b99aa53-162c-450f-a3d3-eb8ab8cad00d",
-      //   "cover": {
-      //     "id": IMAGE_PATH + "70accc08-1ae9-4b56-a702-a96b5510a4f9",
-      //     "type": "image/png",
-      //     "title": "Fac Q My Fwqaac T39"
-      //   }
-      // },
-      // {
-      //   "brief": "这个大动作，开辟了另一个1000亿赛道：电动飞机。",
-      //   "date_created": "2023-07-21T13:30:02.000Z",
-      //   "title": "突发",
-      //   "id": "2b99aa53-162c-450f-a3d3-eb8ab8cad00d",
-      //   "cover": {
-      //     "id": IMAGE_PATH + "70accc08-1ae9-4b56-a702-a96b5510a4f9",
-      //     "type": "image/png",
-      //     "title": "Fac Q My Fwqaac T39"
-      //   }
-      // },
-    ],
+    contentList: [],
+    auStatus: '',
     page: 1,
     limit: 100
   },
@@ -49,6 +28,19 @@ Page({
   pageToLogin() {
     wx.navigateTo({
       url: '../user/login/index'
+    })
+  },
+
+
+  pageToAu() {
+    wx.navigateTo({
+      url: '../authenticate/authenticate'
+    })
+  },
+
+  pageToAuResult() {
+    wx.navigateTo({
+      url: '../result/result'
     })
   },
 
@@ -67,9 +59,11 @@ Page({
   pageToAuthenticate() {
     console.log(isLogin());
     if (isLogin()) {
-      wx.navigateTo({
-        url: '../authenticate/authenticate'
-      })
+      if (this.data.auStatus === 'ing' || this.data.auStatus === 'done') {
+        this.pageToAuResult()
+      } else {
+        this.pageToAu()
+      }
     } else {
       this.pageToLogin()
     }
@@ -79,10 +73,32 @@ Page({
   pageToMiniProgram() {
     // AppId ： wx600a88e4d8d87152  
     // Path：pages/project_packages/pages/details/index?id==项目ID
-
     wx.navigateToMiniProgram({
       appId: 'wx600a88e4d8d87152',
       path: 'pages/project_packages/pages/details/index?id=1',
+      extraData: {
+        foo: 'bar'
+      },
+      envVersion: 'release',
+      success(res) {
+        // 打开成功
+      }
+    })
+  },
+
+  pageToNuKnowPage() {
+    wx.showToast({
+      title: '小程序暂不支持!',
+      icon: 'success',
+      duration: 500,
+      mask: true,
+    });
+
+  },
+
+  pageToShopingMiniProgram() {
+    wx.navigateToMiniProgram({
+      appId: SHOPPING_APPID,
       extraData: {
         foo: 'bar'
       },
@@ -97,6 +113,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   async onLoad() {
+    if (isLogin()) {
+      //filter[_and][0][user_created][_contains]: 596776e8-ba8e-4839-b20e-1bb326b1080a
+      let userId = wx.getStorageSync('user_id')
+      console.log(userId);
+
+      let dataVer: any = await fetchVerificationList()
+      console.log(dataVer);
+      console.log(dataVer.data[0].status);
+      this.setData({
+        auStatus: dataVer.data[0].status
+      })
+    }
     let data: any = await loadContentInfo()
     console.log(data);
     this.setData({

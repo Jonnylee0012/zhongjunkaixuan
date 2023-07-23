@@ -1,5 +1,6 @@
 import { IMAGE_PATH } from "../../../config/global-config"
 import { fetchLogin } from "../../../services/login/login"
+import { loadUserInfo } from "../../../services/user/userInfo"
 
 
 Page({
@@ -41,6 +42,8 @@ Page({
       }
       const result = await fetchLogin(parms)
       console.log(result);
+      const useInfo = await loadUserInfo()
+      console.log(useInfo)
       if (result) {
         wx.showToast({
           title: '登录成功!',
