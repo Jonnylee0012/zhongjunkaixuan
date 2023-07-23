@@ -1,3 +1,4 @@
+import { BASE_URL, IMAGE_PATH } from "../../config/global-config"
 
 
 // pages/result/result.ts
@@ -7,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    headerImageUrl: IMAGE_PATH + '494f49b3-f9e4-4fa3-a522-f58256d492c6',
     dataList: [
       {
         "id": 294841031667482624,
@@ -46,12 +48,12 @@ Page({
     ]
   },
 
-  pageToMiniProgram() {
+  pageToMiniProgram(id: string) {
     // AppId ： wx600a88e4d8d87152  
     // Path：pages/project_packages/pages/details/index?id==项目ID
     wx.navigateToMiniProgram({
       appId: 'wx600a88e4d8d87152',
-      path: 'pages/project_packages/pages/details/index?id=1',
+      path: 'pages/project_packages/pages/details/index?id=' + id,
       extraData: {
         foo: 'bar'
       },
@@ -60,6 +62,13 @@ Page({
         // 打开成功
       }
     })
+  },
+
+  onItemClick(event: any) {
+    console.log(event);
+    const itemIndex = event.currentTarget.dataset.index;
+    const itemData: any = this.data.dataList[itemIndex];
+    this.pageToMiniProgram(itemData.id)
   },
 
   /**

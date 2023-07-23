@@ -34,6 +34,12 @@ Page({
   },
 
 
+  pageToPublicHelp() {
+    wx.navigateTo({
+      url: '../publichelp/publichelp'
+    })
+  },
+
   pageToAu() {
     wx.navigateTo({
       url: '../authenticate/authenticate'

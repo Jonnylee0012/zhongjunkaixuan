@@ -1,1 +1,31 @@
-<view>公益帮扶</view>
+<!--pages/home/home.wxml-->
+<view class="home">
+  <!-- 第一屏幕 -->
+  <view class="home-first">
+    <image class="home-first-image-bg" mode="scaleToFill" src='{{headerImageUrl}}'></image>
+  </view>
+  <!-- 第二屏幕 -->
+  <view class="home-second">
+    <!-- 第二部分  优选内容-->
+    <view class="home-second-content">
+      <view class="home-second-title">
+        <view class="home-second-title-line"></view>
+        <view class="home-second-title-con">优选内容</view>
+      </view>
+
+      <view class="home-second-content-con">
+        <view class="home-second-content-con-item" wx:for="{{dataList}}" wx:key="index" bindtap="onItemClick" data-index="{{index}}">
+          <view class="home-second-content-con-item-left">
+            <view class="home-second-content-con-item-left-title">{{item.name}}</view>
+            <view class="home-second-content-con-item-left-des">{{item.description}}</view>
+          </view>
+          <view class="home-second-content-con-item-right">
+            <!-- <view class="home-second-content-con-item-right-img-box"> -->
+            <image class="home-second-content-con-item-right-img" mode="widthFix" src="{{item.thumb}}"></image>
+            <!-- </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
