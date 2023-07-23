@@ -8,8 +8,8 @@
   <text class="result-des">{{resultDes}}</text>
 
   <!-- 如果是失败状态, 展示失败原因以及重新认证按钮--目前用的“ing”状态代替”失败状态查看效果“,  -->
-  <text wx:if="{{resultState == 'ing'}}"  class="result-reason">{{failedReason}}</text>
-  <button wx:if="{{resultState == 'ing'}}"  class="result-again-btn" formType="submit">重新认证</button>
+  <text wx:if="{{resultState == 'failed'}}" class="result-reason">{{failedReason}}</text>
+  <button wx:if="{{resultState == 'failed'}}" class="result-again-btn" bindtap="pageToAu">重新认证</button>
 
 
 </view>

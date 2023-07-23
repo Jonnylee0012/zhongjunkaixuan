@@ -24,7 +24,8 @@ Page({
     isVerified: false,
     auStatus: '',
     page: 1,
-    limit: 100
+    limit: 100,
+    verificationList: <any>[]
   },
 
   pageToLogin() {
@@ -98,7 +99,7 @@ Page({
 
   pageToNuKnowPage() {
     wx.showToast({
-      title: '小程序暂不支持!',
+      title: '小程序暂不支持此功能~',
       icon: 'success',
       duration: 500,
       mask: true,
@@ -135,10 +136,13 @@ Page({
       console.log(userId);
       let dataVer: any = await fetchVerificationList()
       console.log(dataVer);
-      console.log(dataVer.data[0].status);
-      if (dataVer.data[0].status) {
+      this.setData({
+        verificationList: dataVer.data
+      })
+      if (this.data.verificationList.length > 0) {
+        console.log(this.data.verificationList[0].status);
         this.setData({
-          auStatus: dataVer.data[0].status
+          auStatus: this.data.verificationList[0].status
         })
       }
     }
@@ -202,6 +206,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
+
 
   },
 
