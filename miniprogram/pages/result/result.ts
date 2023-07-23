@@ -13,11 +13,11 @@ Page({
     // resultDes:"优待证审核成功",
 
     // resultState:2,
-    // resultDes:"优待证审核失败"
+    // resultDes:"优待证审核失败",
 
     resultState: 'ing',
     resultDes: "优待证审核中...",
-    failedReason: '',
+    failedReason: '优待证照片模糊不清',
     resultIcon: IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b',
     // iconReviewfail: IMAGE_PATH + '2a1a974a-0e89-4164-8332-f492b4433bfc',
     // iconReviewSuccess: IMAGE_PATH + 'd90742c2-3734-47ca-865c-a97cffa96dad',
