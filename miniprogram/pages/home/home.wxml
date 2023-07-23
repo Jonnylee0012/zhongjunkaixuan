@@ -12,7 +12,7 @@
     <view class="home-second-imgs">
       <view class="home-second-imgs-first">
         <image class="home-second-imgs-first-img" mode="widthFix" src="{{homeM1}}"></image>
-        <view class="home-second-imgs-first-btn" bindtap="pageToAuthenticate">前往认证 <text class="home-second-imgs-first-btn-icon">>></text></view>
+        <view class="home-second-imgs-first-btn" bindtap="pageToAuthenticate">前往认证 <text class="home-second-imgs-first-btn-icon">></text></view>
       </view>
       <view class="home-second-imgs-second-box">
         <view class="home-second-imgs-second-left">

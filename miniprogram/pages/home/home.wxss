@@ -73,9 +73,9 @@
 .home-second-imgs-first-btn{
   display: inline-block;
   position: absolute;
-  bottom:90rpx;
-  right: 60rpx;
-  background: rgb(169, 41, 41);
+  bottom:30rpx;
+  left: 50rpx;
+  background: rgb(253, 145, 138);
   color:  #fff;
   padding: 20rpx 30rpx;
   font-size: 25rpx;
