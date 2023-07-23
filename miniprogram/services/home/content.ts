@@ -5,6 +5,7 @@ import { BASE_URL } from "../../config/global-config"
 export function loadContentInfo() {
   //let that = this
   console.log(wx.getStorageSync('access_token'))
+  // authorization: wx.getStorageSync('access_token'),
   let promise = new Promise((resolve, reject) => {
     wx.request({
       url: BASE_URL + 'items/content',
@@ -16,7 +17,6 @@ export function loadContentInfo() {
       dataType: 'json',
       header: {
         'content-type': 'application/json',// 默认值
-        authorization: wx.getStorageSync('access_token'),
       },
       success: function (res) {
         resolve(res.data)

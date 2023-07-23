@@ -5,6 +5,7 @@
     "pages/splash/splash",
     "pages/authenticate/authenticate",
     "pages/result/result",
+    "pages/publichelp/publichelp",
     "pages/contentweb/contentweb"
   ],
   "window": {

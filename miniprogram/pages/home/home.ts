@@ -1,6 +1,7 @@
 import { IMAGE_PATH, SHOPPING_APPID } from "../../config/global-config";
 import { loadContentInfo } from "../../services/home/content";
 import { fetchVerificationList } from "../../services/user/IdentityAuth";
+import { loadUserInfo } from "../../services/user/userInfo";
 import { isLogin, setThumbImageUrl } from "../../utils/util";
 
 // pages/home/home.ts
@@ -20,6 +21,7 @@ Page({
     homeG4: IMAGE_PATH + '66962d7d-431e-4aa0-a042-95e796b1609c',
     HomeGoAu: IMAGE_PATH + '167aedf5-38c2-4845-a29b-2de64c15a976',
     contentList: [],
+    isVerified: false,
     auStatus: '',
     page: 1,
     limit: 100
@@ -57,17 +59,19 @@ Page({
   },
 
   pageToAuthenticate() {
-    console.log(isLogin());
     if (isLogin()) {
-      if (this.data.auStatus === 'ing' || this.data.auStatus === 'done') {
+      if (this.data.isVerified) {
         this.pageToAuResult()
       } else {
-        this.pageToAu()
+        if (this.data.auStatus === 'ing' || this.data.auStatus === 'done') {
+          this.pageToAuResult()
+        } else {
+          this.pageToAu()
+        }
       }
     } else {
       this.pageToLogin()
     }
-
   },
 
   pageToMiniProgram() {
@@ -115,15 +119,22 @@ Page({
   async onLoad() {
     if (isLogin()) {
       //filter[_and][0][user_created][_contains]: 596776e8-ba8e-4839-b20e-1bb326b1080a
+      const useInfo: any = await loadUserInfo()
+      console.log(useInfo.data)
+      // console.log(useInfo.data.is_verified)
+      this.setData({
+        isVerified: useInfo.data.is_verified
+      })
       let userId = wx.getStorageSync('user_id')
       console.log(userId);
-
       let dataVer: any = await fetchVerificationList()
       console.log(dataVer);
       console.log(dataVer.data[0].status);
-      this.setData({
-        auStatus: dataVer.data[0].status
-      })
+      if (dataVer.data[0].status) {
+        this.setData({
+          auStatus: dataVer.data[0].status
+        })
+      }
     }
     let data: any = await loadContentInfo()
     console.log(data);
