@@ -52,6 +52,12 @@ Page({
     })
   },
 
+  onItemClick(event) {
+    const itemIndex = event.currentTarget.dataset.index; //获取当前点击的列表项的下标
+    const itemData: any = this.data.contentList[itemIndex]; //根据下标获取当前点击的列表项的数据
+
+    console.log('您点击了：', itemData);
+  },
 
   pageToAuthenticate() {
     console.log(isLogin());

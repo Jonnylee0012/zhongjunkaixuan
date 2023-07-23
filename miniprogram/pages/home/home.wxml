@@ -61,7 +61,7 @@
       </view>
 
       <view class="home-second-content-con">
-        <view class="home-second-content-con-item" wx:for="{{contentList}}" wx:key="{{item.id}}">
+        <view class="home-second-content-con-item" wx:for="{{contentList}}" wx:key="index" bindtap="onItemClick" data-index="{{index}}">
           <view class="home-second-content-con-item-left">
             <view class="home-second-content-con-item-left-title">{{item.title}}</view>
             <view class="home-second-content-con-item-left-des">{{item.brief}}</view>
