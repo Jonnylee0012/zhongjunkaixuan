@@ -4,7 +4,8 @@
     "pages/user/login/index",
     "pages/splash/splash",
     "pages/authenticate/authenticate",
-    "pages/result/result"
+    "pages/result/result",
+    "pages/contentweb/contentweb"
   ],
   "window": {
     "backgroundTextStyle": "light",
