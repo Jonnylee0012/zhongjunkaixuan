@@ -41,6 +41,11 @@
   bottom: 10vh;
   z-index: 10;
   font-size: 25rpx;
+
+}
+.home-first-btn-icon{
+  width: 15rpx;
+  margin-left: 5rpx;
 }
 
 /* 第二部分 */
@@ -80,7 +85,7 @@
   padding: 20rpx 30rpx;
   font-size: 25rpx;
   line-height: 25rpx;
-  border-radius: 30rpx;
+  border-radius: 50rpx;
   display: flex;
 }
 .home-second-imgs-first-btn-icon{

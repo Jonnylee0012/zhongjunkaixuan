@@ -4,7 +4,7 @@
   <view class="home-first">
     <image class="home-first-image-bg" mode="scaleToFill" src='{{homeHeaderImageUrl}}'></image>
     <!-- <text class="home-first-text">退伍军人优待证</text> -->
-    <text class="home-first-btn" bindtap="pageToAuthenticate">前往认证 >> </text>
+    <view class="home-first-btn" bindtap="pageToAuthenticate">前往认证  <image class="home-first-btn-icon" mode="widthFix" src="/images/iccon-au-arrow.png"></image></view>
   </view>
   <!-- 第二屏幕 -->
   <view class="home-second">
