@@ -25,11 +25,11 @@
   <form bindsubmit="onSumbitVerification">
     <view class="authenticate-info-box">
       <text class="authenticate-info-label">姓名</text>
-      <input class="authenticate-info-input1" type="text" placeholder="请输入姓名" name="name" model:value='{{cardName}}' />
+      <input class="authenticate-info-input" type="text" placeholder="请输入姓名" name="name" model:value='{{cardName}}' />
     </view>
     <view class="authenticate-info-box">
       <text class="authenticate-info-label">退伍军人优待证号码</text>
-      <input class="authenticate-info-input2" type="text" placeholder="请输入号码" name="number" model:value='{{cardNumber}}' />
+      <input type="number" model:value="{{cardNumber}}" class="authenticate-info-input" type="text" placeholder="请输入号码" />
     </view>
     <button class="authenticate-sub-btn" formType="submit">提交</button>
   </form>
