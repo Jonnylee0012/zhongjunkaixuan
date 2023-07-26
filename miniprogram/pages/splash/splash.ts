@@ -23,6 +23,10 @@ Page({
     })
   },
 
+  bottom() {
+    console.log('底部了');
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -69,7 +73,11 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
+    console.log('底部了');
 
+    wx.redirectTo({
+      url: '../home/home'
+    });
   },
 
   /**

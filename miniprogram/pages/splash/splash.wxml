@@ -1,24 +1,26 @@
 <!--pages/splash/splash.wxml-->
-<swiper vertical="false" class="splash-box" catchtap="pageTo">
-  <!-- 第一屏幕轮播 -->
-  <swiper-item class="swiper-item">
-    <view class="splash-swiper">
-      <image mode="scaleToFill" src="{{splashImageUrl[1]}}" class="swiper-item-img"></image>
-      <view class="swiper-item-img-point" bindtap="pageTo">
-        <!-- <image class="swiper-item-img-point-icon" mode="widthFix" src="{{HomeGoAu}}"></image> -->
-        <image class="swiper-item-img-point-icon" mode="widthFix" src="/images/icon-sp-arrow.png"></image>
+<scroll-view scrollY="true" bindscrolltolower="bottom">
+  <swiper vertical="false" class="splash-box" catchtap="pageTo">
+    <!-- 第一屏幕轮播 -->
+    <swiper-item class="swiper-item">
+      <view class="splash-swiper">
+        <image mode="scaleToFill" src="{{splashImageUrl[1]}}" class="swiper-item-img"></image>
+        <view class="swiper-item-img-point" bindtap="pageTo">
+          <!-- <image class="swiper-item-img-point-icon" mode="widthFix" src="{{HomeGoAu}}"></image> -->
+          <image class="swiper-item-img-point-icon" mode="widthFix" src="/images/icon-sp-arrow.png"></image>
+        </view>
       </view>
-    </view>
-  </swiper-item>
+    </swiper-item>
 
-  <!-- 第二屏幕轮播 -->
-  <swiper-item class="swiper-item">
-    <view class="splash-swiper" bindtap="pageTo">
-      <image mode="scaleToFill" src='{{splashImageUrl[1]}}' class="swiper-item-img"></image>
-      <view class="swiper-item-img-point">
-        <!-- <image class="swiper-item-img-point-icon" mode="widthFix" src="{{HomeGoAu}}"></image> -->
-        <image class="swiper-item-img-point-icon" mode="widthFix" src="/images/icon-sp-arrow.png"></image>
-      </view>
-    </view>
-  </swiper-item>
-</swiper>
+    <!-- 第二屏幕轮播 -->
+    <!-- <swiper-item class="swiper-item"> -->
+    <!-- <view class="splash-swiper" bindtap="pageTo"> -->
+    <!-- <image mode="scaleToFill" src='{{splashImageUrl[1]}}' class="swiper-item-img"></image> -->
+    <!-- <view class="swiper-item-img-point"> -->
+    <!-- <image class="swiper-item-img-point-icon" mode="widthFix" src="{{HomeGoAu}}"></image> -->
+    <!-- <image class="swiper-item-img-point-icon" mode="widthFix" src="/images/icon-sp-arrow.png"></image> -->
+    <!-- </view>
+    </view> -->
+    <!-- </swiper-item> -->
+  </swiper>
+</scroll-view>
