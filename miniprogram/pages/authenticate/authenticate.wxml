@@ -1,6 +1,6 @@
 <view class="authenticate-box">
-  <!-- 退役军人优待证的正反面部分 -->
-  <text class="authenticate-title">退役军人优待证的正反面</text>
+  <!-- 退伍军人优待证的正反面部分 -->
+  <text class="authenticate-title">退伍军人优待证的正反面</text>
   <view class="authenticate-image-box" id="frontTempFilePath" bindtap="onChooseImage">
     <view class="authenticate-image-left">
       <text class="authenticate-image-left-title">头像面</text>
@@ -28,8 +28,8 @@
       <input class="authenticate-info-input" type="text" placeholder="请输入姓名" name="name" model:value='{{cardName}}' />
     </view>
     <view class="authenticate-info-box">
-      <text class="authenticate-info-label">退役军人优待证号码</text>
-      <input type="number" model:value="{{cardNumber}}" class="authenticate-info-input" type="text" placeholder="请输入号码" />
+      <text class="authenticate-info-label">退伍军人优待证号码</text>
+      <input class="authenticate-info-input" type="text" placeholder="请输入号码" name="number" model:value='{{cardNumber}}' />
     </view>
     <button class="authenticate-sub-btn" formType="submit">提交</button>
   </form>

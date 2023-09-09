@@ -1,13 +1,12 @@
 {
   "pages": [
-    "pages/splash/splash",
     "pages/home/home",
     "pages/user/login/index",
+    "pages/splash/splash",
     "pages/authenticate/authenticate",
     "pages/result/result",
     "pages/publichelp/publichelp",
-    "pages/contentweb/contentweb",
-    "pages/article/article"
+    "pages/contentweb/contentweb"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,7 +1,0 @@
-<view class="home">
-  <view>
-    <view class="article-title">{{title}}</view>
-    <view class="article-source">{{source}}</view>
-  </view>
-  <towxml nodes="{{formatArticle}}" />
-</view>

@@ -1,6 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "中军凯旋",
-  "enablePullDownRefresh": true,
-  "onReachBottomDistance": 50
+  "navigationBarTitleText": "欢迎"
+
 }

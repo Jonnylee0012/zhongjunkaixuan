@@ -11,10 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //homeHeaderImageUrl: IMAGE_PATH + 'b0487175-6f82-4e77-90b9-072ef4530dd7',
-    bannerImageUrl1: IMAGE_PATH + '3da2709f-7a67-4fc2-8b3d-413e541200c3',
-    bannerImageUrl2: IMAGE_PATH + '97ba8b7d-b3c0-478f-9a89-cb9be84f30bb',
-    index: 0,
+    homeHeaderImageUrl: IMAGE_PATH + '7931c2e3-f21c-451d-82dd-d4170b74be14',
     homeM1: IMAGE_PATH + 'd5b97484-a2a8-4e66-b579-ecd5f2298c9e',
     homeM2: IMAGE_PATH + '53100a87-5f0d-41f5-be2e-86e6a27ac36a',
     homeM3: IMAGE_PATH + 'dc625f57-cf64-417c-a0f7-cc517ddc0732',
@@ -24,13 +21,10 @@ Page({
     homeG4: IMAGE_PATH + '66962d7d-431e-4aa0-a042-95e796b1609c',
     HomeGoAu: IMAGE_PATH + '167aedf5-38c2-4845-a29b-2de64c15a976',
     contentList: [],
-    videoUrl: IMAGE_PATH + '7aa2c0ed-bb27-434d-9cbf-fbc5d6787c02',
-    hideVideoView: false,
     isVerified: false,
     auStatus: '',
     page: 1,
-    limit: 100,
-    verificationList: <any>[]
+    limit: 100
   },
 
   pageToLogin() {
@@ -62,48 +56,12 @@ Page({
     const itemIndex = event.currentTarget.dataset.index; //获取当前点击的列表项的下标
     const itemData: any = this.data.contentList[itemIndex]; //根据下标获取当前点击的列表项的数据
 
-    console.log('您点击了：', itemData);
-    //wx.navigateTo({ url: '../contentweb/contentweb?link=' + itemData.url })
-    console.log('您点击了：', itemData.id);
-    wx.navigateTo({ url: '../article/article?id=' + itemData.id })
-
+    console.log('您点击了：', itemData.url);
+    wx.navigateTo({ url: '../contentweb/contentweb?link=' + itemData.url })
     //     wx.postMessage({ data: 'foo' })
     // wx.postMessage({ data: {foo: 'bar'} })
     // wx.getEnv(function(res) { console.log(res.miniprogram) })
 
-  },
-
-  bindChange(e: any) {
-    console.log(e.detail.source, e.detail.current, 'onChange');
-    // if (e.detail.source === 'touch') {
-    //     const current = e.detail.current;
-    //     this.setData({
-    //         index: current,
-    //     });
-    // }
-    const current = e.detail.current;
-    this.setData({
-      index: current,
-    });
-
-  },
-
-  onSwiperItemClick(event: any) {
-    console.log(event);
-    console.log(this.data.index);
-    if (this.data.index === 0) {
-      this.pageToAuthenticate();
-    } else {
-      this.pageToShopingMiniProgram()
-    }
-  },
-
-  bindended(event: any) {
-    console.log('播放结束');
-    console.log(event);
-    this.setData({
-      hideVideoView: true
-    })
   },
 
   pageToAuthenticate() {
@@ -125,10 +83,6 @@ Page({
   pageToMiniProgram() {
     // AppId ： wx600a88e4d8d87152  
     // Path：pages/project_packages/pages/details/index?id==项目ID
-
-    // 优待证专属福利：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D87Mb5K2AhO%26kdt_id%3D127714740
-    // 创业就业营：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3DoOE5uTpffk%26kdt_id%3D127714740
-    // 大健康：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D7JPE3pResH%26kdt_id%3D127714740
     wx.navigateToMiniProgram({
       appId: 'wx600a88e4d8d87152',
       path: 'pages/project_packages/pages/details/index?id=1',
@@ -142,70 +96,9 @@ Page({
     })
   },
 
-  pageToSpecialMiniProgram() {
-    // AppId ： wx600a88e4d8d87152  
-    // Path：pages/project_packages/pages/details/index?id==项目ID
-
-    // 优待证专属福利：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D87Mb5K2AhO%26kdt_id%3D127714740
-    // 创业就业营：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3DoOE5uTpffk%26kdt_id%3D127714740
-    // 大健康：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D7JPE3pResH%26kdt_id%3D127714740
-    wx.navigateToMiniProgram({
-      appId: SHOPPING_APPID,
-      path: 'pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D87Mb5K2AhO%26kdt_id%3D127714740',
-      extraData: {
-        foo: 'bar'
-      },
-      envVersion: 'release',
-      success(res) {
-        // 打开成功
-      }
-    })
-  },
-
-  pageToBusinessMiniProgram() {
-    // AppId ： wx600a88e4d8d87152  
-    // Path：pages/project_packages/pages/details/index?id==项目ID
-
-    // 优待证专属福利：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D87Mb5K2AhO%26kdt_id%3D127714740
-    // 创业就业营：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3DoOE5uTpffk%26kdt_id%3D127714740
-    // 大健康：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D7JPE3pResH%26kdt_id%3D127714740
-    wx.navigateToMiniProgram({
-      appId: SHOPPING_APPID,
-      path: 'pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3DoOE5uTpffk%26kdt_id%3D127714740',
-      extraData: {
-        foo: 'bar'
-      },
-      envVersion: 'release',
-      success(res) {
-        // 打开成功
-      }
-    })
-  },
-
-  pageToHealthMiniProgram() {
-    // AppId ： wx600a88e4d8d87152  
-    // Path：pages/project_packages/pages/details/index?id==项目ID
-
-    // 优待证专属福利：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D87Mb5K2AhO%26kdt_id%3D127714740
-    // 创业就业营：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3DoOE5uTpffk%26kdt_id%3D127714740
-    // 大健康：pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D7JPE3pResH%26kdt_id%3D127714740
-    wx.navigateToMiniProgram({
-      appId: SHOPPING_APPID,
-      path: 'pages/common/blank-page/index?weappSharePath=pages%2Fhome%2Ffeature%2Findex%3Falias%3D7JPE3pResH%26kdt_id%3D127714740',
-      extraData: {
-        foo: 'bar'
-      },
-      envVersion: 'release',
-      success(res) {
-        // 打开成功
-      }
-    })
-  },
-
-
   pageToNuKnowPage() {
     wx.showToast({
-      title: '小程序暂不支持此功能~',
+      title: '小程序暂不支持!',
       icon: 'success',
       duration: 500,
       mask: true,
@@ -242,13 +135,10 @@ Page({
       console.log(userId);
       let dataVer: any = await fetchVerificationList()
       console.log(dataVer);
-      this.setData({
-        verificationList: dataVer.data
-      })
-      if (this.data.verificationList.length > 0) {
-        console.log(this.data.verificationList[0].status);
+      console.log(dataVer.data[0].status);
+      if (dataVer.data[0].status) {
         this.setData({
-          auStatus: this.data.verificationList[0].status
+          auStatus: dataVer.data[0].status
         })
       }
     }
@@ -312,7 +202,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom() {
-
 
   },
 

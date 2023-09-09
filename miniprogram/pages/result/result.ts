@@ -13,23 +13,16 @@ Page({
     // resultDes:"优待证审核成功",
 
     // resultState:2,
-    // resultDes:"优待证审核失败",
+    // resultDes:"优待证审核失败"
 
     resultState: 'ing',
     resultDes: "优待证审核中...",
-    failedReason: '优待证照片模糊不清',
+    failedReason: '',
     resultIcon: IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b',
     // iconReviewfail: IMAGE_PATH + '2a1a974a-0e89-4164-8332-f492b4433bfc',
     // iconReviewSuccess: IMAGE_PATH + 'd90742c2-3734-47ca-865c-a97cffa96dad',
     // iconReviewing: IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b',
-    verificationList: <any>[]
-  },
 
-
-  pageToAu() {
-    wx.navigateTo({
-      url: '../authenticate/authenticate'
-    })
   },
 
   /**
@@ -40,28 +33,20 @@ Page({
     if (isLogin()) {
       let data: any = await fetchVerificationList()
       console.log(data);
-
-      this.setData({
-        verificationList: data.data
-      })
-      if (this.data.verificationList.length > 0) {
-        let status = this.data.verificationList[0].status
-        let resultIcon = ''
-        if (status === 'ing') {
-          resultIcon = IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b'
-        } else if (status === 'done') {
-          resultIcon = IMAGE_PATH + 'd90742c2-3734-47ca-865c-a97cffa96dad'
-        } else {
-          resultIcon = IMAGE_PATH + '2a1a974a-0e89-4164-8332-f492b4433bfc'
-        }
-        this.setData({
-          resultState: status,
-          failedReason: this.data.verificationList[0].failed_reason,
-          resultIcon: resultIcon,
-        })
+      let status = data.data[0].status
+      let resultIcon = ''
+      if (status === 'ing') {
+        resultIcon = IMAGE_PATH + 'a7717f07-9372-4a13-921d-4356e5d3068b'
+      } else if (status === 'done') {
+        resultIcon = IMAGE_PATH + 'd90742c2-3734-47ca-865c-a97cffa96dad'
+      } else {
+        resultIcon = IMAGE_PATH + '2a1a974a-0e89-4164-8332-f492b4433bfc'
       }
-
-
+      this.setData({
+        resultState: status,
+        failedReason: data.data[0].failed_reason,
+        resultIcon: resultIcon,
+      })
     }
   },
 
