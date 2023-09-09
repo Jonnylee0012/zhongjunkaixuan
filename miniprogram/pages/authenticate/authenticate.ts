@@ -1,4 +1,4 @@
-import { BASE_URL, IMAGE_PATH, PRIVATE_FOLDER_KEY, TOKEN } from "../../config/global-config";
+import { BASE_URL, IMAGE_PATH, PRIVATE_FOLDER_KEY } from "../../config/global-config";
 import { fetchVerification } from "../../services/user/IdentityAuth";
 import { loadUserInfo } from "../../services/user/userInfo";
 

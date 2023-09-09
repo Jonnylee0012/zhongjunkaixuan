@@ -8,23 +8,41 @@ Page({
    */
   data: {
     splashImageUrl: [
-      IMAGE_PATH + 'addaea63-a2c5-4a65-acbe-be67d6e6fd13',
-      IMAGE_PATH + 'addaea63-a2c5-4a65-acbe-be67d6e6fd13',
-    ]
+      IMAGE_PATH + '97ba8b7d-b3c0-478f-9a89-cb9be84f30bb',
+      // IMAGE_PATH + 'addaea63-a2c5-4a65-acbe-be67d6e6fd13',
+    ],
+    dyAry: <any>[]
   },
 
 
-  pageTo(e: any) {
-    console.log(e);
-    const token = wx.getStorageSync('access_token')
-    console.log(token)
-    wx.navigateTo({
-      url: '../home/home'
-    })
-  },
+  // pageTo(e: any) {
+  //   console.log(e);
+  //   const token = wx.getStorageSync('access_token')
+  //   console.log(token)
+  //   wx.navigateTo({
+  //     url: '../home/home'
+  //   })
+  // },
 
-  bottom() {
+  onReachBottom() {
     console.log('底部了');
+  },
+
+  onTransition(e: any) {
+    console.log(e);
+    // if (this.lastData) {
+    let dy: any = e.detail.dy;
+    //如果到底部还继续往下拉，这弹出提示框
+    if (dy == 0 && this.data.dyAry[this.data.dyAry.length - 1] > 0) {
+      // this.dyAry = [];
+      // wx.toast('swpier都看完啦')
+      console.log('底部了');
+      wx.redirectTo({
+        url: '../home/home'
+      });
+    }
+    this.data.dyAry.push(dy)
+    // }
   },
 
   /**
@@ -72,13 +90,13 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom() {
-    console.log('底部了');
+  // onReachBottom() {
+  //   console.log('底部了');
 
-    wx.redirectTo({
-      url: '../home/home'
-    });
-  },
+  //   wx.redirectTo({
+  //     url: '../home/home'
+  //   });
+  // },
 
   /**
    * 用户点击右上角分享

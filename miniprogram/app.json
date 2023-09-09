@@ -6,7 +6,8 @@
     "pages/authenticate/authenticate",
     "pages/result/result",
     "pages/publichelp/publichelp",
-    "pages/contentweb/contentweb"
+    "pages/contentweb/contentweb",
+    "pages/article/article"
   ],
   "window": {
     "backgroundTextStyle": "light",

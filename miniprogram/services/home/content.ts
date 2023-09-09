@@ -30,3 +30,27 @@ export function loadContentInfo() {
   })
   return promise
 }
+
+//获取单篇文章详情
+export function getSingleContentInfo(id: string) {
+  let promise = new Promise((resolve, reject) => {
+    wx.request({
+      url: BASE_URL + 'items/content/' + id,
+      method: 'GET',
+      dataType: 'json',
+      header: {
+        'content-type': 'application/json',// 默认值
+      },
+      success: function (res: any) {
+        resolve(res.data.data)
+        console.log(res.data)
+      },
+      fail: function (error) {
+        reject(error)
+        console.log('操作失败')
+      }
+    })
+  })
+  return promise
+
+}

@@ -1,11 +1,25 @@
 <!--pages/home/home.wxml-->
 <view class="home">
+  <view class="video_box" hidden="{{hideVideoView}}">
+    <video class="video_item" src="{{videoUrl}}" autoplay="true" show-fullscreen-btn="{{false}}" show-play-btn="{{false}}" show-center-play-btn="{{false}}" show-progress="{{false}}" objectFit="cover" bindended="bindended"></video>
+  </view>
   <!-- 第一屏幕 -->
   <view class="home-first">
-    <image class="home-first-image-bg" mode="scaleToFill" src='{{homeHeaderImageUrl}}'></image>
+    <!-- <image class="home-first-image-bg" mode="scaleToFill" src='{{homeHeaderImageUrl}}'></image> -->
     <!-- <text class="home-first-text">退伍军人优待证</text> -->
-    <view class="home-first-btn" bindtap="pageToAuthenticate">前往认证 <image class="home-first-btn-icon" mode="widthFix" src="/images/iccon-au-arrow.png"></image>
-    </view>
+    <!-- <view class="home-first-btn" bindtap="pageToAuthenticate">前往认证 <image class="home-first-btn-icon" mode="widthFix" src="/images/iccon-au-arrow.png"></image> -->
+
+    <swiper class="banner" indicator-dots="true" interval="3000" autoplay="true" catchtap="onSwiperItemClick" current="{{index}}" bind:change="bindChange">
+      <swiper-item>
+        <image class="home-first-image-bg" src='{{bannerImageUrl1}}'></image>
+      </swiper-item>
+      <swiper-item>
+        <image class="home-first-image-bg" src='{{bannerImageUrl2}}'></image>
+      </swiper-item>
+    </swiper>
+
+
+
   </view>
   <!-- 第二屏幕 -->
   <view class="home-second">
@@ -16,10 +30,10 @@
         <view class="home-second-imgs-first-btn" bindtap="pageToAuthenticate">前往认证 <text class="home-second-imgs-first-btn-icon">></text></view>
       </view>
       <view class="home-second-imgs-second-box">
-        <view class="home-second-imgs-second-left" bindtap="pageToShopingMiniProgram">
+        <view class="home-second-imgs-second-left" bindtap="pageToSpecialMiniProgram">
           <image class="home-second-imgs-first-img" mode="widthFix" src="{{homeM2}}"></image>
         </view>
-        <view class="home-second-imgs-second-right" bindtap="pageToNuKnowPage">
+        <view class="home-second-imgs-second-right" bindtap="pageToHealthMiniProgram">
           <image class="home-second-imgs-first-img" mode="widthFix" src="{{homeM3}}"></image>
         </view>
       </view>
@@ -29,24 +43,29 @@
     <view class="home-second-recommend">
       <view class="home-second-title">
         <view class="home-second-title-line"></view>
-        <view class="home-second-title-con">优选推荐</view>
+        <view class="home-second-title-con">凯旋推荐</view>
       </view>
       <view class="home-second-recommend-con">
         <view class="home-second-recommend-con-item" bindtap="pageToShopingMiniProgram">
           <image class="home-second-recommend-con-item-icon" mode="widthFix" src="{{homeG1}}"></image>
-          <text class="home-second-recommend-con-item-text">凯旋甄选</text>
+          <text class="home-second-recommend-con-item-text">供销社</text>
+          <text class="home-second-recommend-con-item-des-text">(凯旋甄选)</text>
         </view>
-        <view class="home-second-recommend-con-item">
+        <view class="home-second-recommend-con-item" bindtap="pageToBusinessMiniProgram">
           <image class="home-second-recommend-con-item-icon" mode="widthFix" src="{{homeG2}}"></image>
-          <text class="home-second-recommend-con-item-text">创业就业营</text>
+          <text class="home-second-recommend-con-item-text">服务社</text>
+          <text class="home-second-recommend-con-item-des-text">(创业就业)</text>
         </view>
         <view class="home-second-recommend-con-item" bindtap="pageToNuKnowPage">
           <image class="home-second-recommend-con-item-icon" mode="widthFix" src="{{homeG3}}"></image>
-          <text class="home-second-recommend-con-item-text">凯旋视频号</text>
+          <text class="home-second-recommend-con-item-text">展演社</text>
+          <text class="home-second-recommend-con-item-des-text">(凯旋视频)</text>
+
         </view>
         <view class="home-second-recommend-con-item" bindtap="pageToPublicHelp">
           <image class="home-second-recommend-con-item-icon" mode="widthFix" src="{{homeG4}}"></image>
-          <text class="home-second-recommend-con-item-text">公益帮扶</text>
+          <text class="home-second-recommend-con-item-text">互助社</text>
+          <text class="home-second-recommend-con-item-des-text">(公益帮扶)</text>
         </view>
 
       </view>
@@ -58,7 +77,7 @@
     <view class="home-second-content">
       <view class="home-second-title">
         <view class="home-second-title-line"></view>
-        <view class="home-second-title-con">优选内容</view>
+        <view class="home-second-title-con">凯旋动态</view>
       </view>
 
       <view class="home-second-content-con">
